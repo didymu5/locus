@@ -1,0 +1,24 @@
+{
+  "name": "markthis",
+  "version": "0.0.1",
+  "description": "Press a button and get the current position and time",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "geolocation",
+    "finding",
+    "application"
+  ],
+  "author": "Tommy Wu",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.15.2"
+  }
+}
+i
