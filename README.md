@@ -11,4 +11,6 @@ This app gets the geolocation and time of the very spot you are.
 ###Todos
 - [] Project setup
 - [] Geolocaiton
+- [] settup eslint
+- [] add sass to webpack
 - [] deploy to heroku
