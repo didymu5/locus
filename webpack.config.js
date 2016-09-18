@@ -1,4 +1,6 @@
 var path = require("path");
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+
 module.exports = {
   entry: {
     app: ["babel-polyfill", "./src/main.js"]
@@ -6,7 +8,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "public"),
     publicPath: "/",
-    filename: "bundle.js"
+    filename: "app.bundle.js"
   },
   module: {
     loaders: [{
@@ -14,5 +16,17 @@ module.exports = {
       exclude: /node_modules/,
       loader: 'babel-loader'
     }]
-  }
+  },
+  resolve: {
+    alias: {
+      moment: 'moment/moment.js'
+    },
+    modulesDirectories: ['node_modules/']
+  },
+  plugins: [
+    new CopyWebpackPlugin([{
+          from: 'index.html',
+          to: 'index.html'
+        }])
+  ]
 };
