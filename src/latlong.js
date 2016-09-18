@@ -1,25 +1,25 @@
 
-function getLatLong() {
-  if(!navigator.geolocation) {
-    console.error('your browser does not support Geolocation');
-    return false;
-  }
-  let options = {
-    enableHighAccuracy: true,
-    timeout: 5000,
-    maximumAge: 0
-  };
-  
-  let success = (pos) => {
-    const coord = pos.coords;
-    console.log(coord.latitude, coord.longitude);
-    console.log(coord.accuracy);
-    return {lat: coord.latitude, long: coord.longitude, accuracy: coord.accuracy};
-  }
-  
-  let error = (err) => console.warn(err.code, err.message);
-
-  return navigator.geolocation.getCurrentPosition(success, error, options);
+const defaultOptions = {
+  enableHighAccuracy: false,
+  timeout: Infinity,
+  maximumAge: 0
+}
+const getCoordinates =
+(options = defaultOptions) => {
+  return new Promise((resolve, reject) => {
+    if(!navigator.geolocation || !navigator.geolocation.getCurrentPosition) {
+      return reject(new Error("geolocation is not supported in your browser"));
+    }
+    navigator.geolocation.getCurrentPosition(resolve, reject, options);
+  });
+}
+const rejectLocation = (err) => {
+  const ERROR_TYPE_CODES = [
+    'Unknown error',
+    'Permission denied by user',
+    'Position is not available',
+    'Request timed out'
+  ];
 }
 
-export default getLatLong;
+export default getCoordinates;
