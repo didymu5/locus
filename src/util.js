@@ -13,6 +13,7 @@ let ready = (fn) => {
     return fn();
   }
 }
+let sayAwesome = () => console.log('awesome stuff');
 
 
-export { ready };
+export { ready, sayAwesome };
