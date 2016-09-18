@@ -8,9 +8,14 @@ This app gets the geolocation and time of the very spot you are.
 - Works on my phone
 - Uses Browser Geolocation?
 
+
+##Getting started
+```npm start```
+
 ###Todos
 - [] Project setup
-- [] Geolocaiton
+- [x] Geolocaiton
+- [] Build task with webpack `npm run build`
 - [] settup eslint
 - [] add sass to webpack
-- [] deploy to heroku
+- [] deploy to somewhere???
