@@ -1,4 +1,4 @@
-#Markthis
+#Locus App
 
 This app gets the geolocation and time of the very spot you are.
 
@@ -17,7 +17,7 @@ This app gets the geolocation and time of the very spot you are.
 - [x] Geolocaiton
 - [] Build task with webpack `npm run build`
 - [] settup eslint
-- [] add sass to webpack
+- [] add sass-loader to webpack
 - [] make it pretty
 - [] needs unit tests...I suck at this...
 - [] deploy to somewhere???
