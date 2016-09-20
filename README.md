@@ -23,3 +23,4 @@ This app gets the geolocation and time of the very spot you are.
 - [] make it pretty
 - [] needs unit tests...I suck at this...
 - [] deploy to somewhere???
+- [] offline mode
