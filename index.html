@@ -1,19 +1,26 @@
 <html>
 <head>
-  <title>Find me where this is</title>
+  <title>LOCUS - Locate yourself</title>
 
 </head>
 <body>
-  <div id="loading-indicator" style="display:none;">Finding your location...</div>
-<h1 id="coordinates-block"><span id="latitude-txt"></span>,
+  <div id="loading-indicator">Finding your location...</div>
+<h1 id="coordinates-block" style="display:none;"><span id="latitude-txt"></span>,
 <span id="longitude-txt"></span>
 </h1>
 <p>
   <span id="timestamp-txt"></span>
 </p>
-<button onclick="javascrip:location.reload();">Mark this place and time</button>
+<button onclick="javascrip:window.location = '/'; ">LOCUS now</button>
+
 <!-- https://www.google.com/maps/preview/@-15.623037,18.388672,8z -->
 <a href=""></a>
+<br>
+<br>
+<br>
+<footer>
+  &copy; LOCUS app
+</footer>
 <script type="text/javascript" src="app.bundle.js"></script>
 </body>
 </html>
