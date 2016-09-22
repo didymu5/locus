@@ -1,5 +1,10 @@
 import moment from 'moment';
-import { ready, sayAwesome } from './util';
+import {
+  ready,
+  getParamByName,
+  getAllParams,
+  toggleLoader
+} from './util';
 import getCoordinates from "./latlong";
 
 ready(() => {
