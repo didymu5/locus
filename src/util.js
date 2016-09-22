@@ -48,12 +48,10 @@ const toggleLoader = (toggle = 'hide', loadingDOM, containerDOM) => {
   if(loadingDOM.style && toggle === 'hide') {
     loadingDOM.style.display = "none";
     containerDOM.style.display = "block";
-    console.log('hiding loader')
   }
   if(loadingDOM.style && toggle === 'show') {
     loadingDOM.style.display = "block";
     containerDOM.style.display = "none";
-    console.log('showing loader')
   }
 };
 
