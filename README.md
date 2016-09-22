@@ -15,7 +15,7 @@ This app gets the geolocation and time of the very spot you are.
 ###Todos
 - [x] Project setup
 - [x] Geolocaiton
-- [] stateless http link
+- [x] stateless http link
 - [] loading indcator
 - [] Build task with webpack `npm run build`
 - [] settup eslint
