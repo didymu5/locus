@@ -1,13 +1,8 @@
 import moment from 'moment';
-import {
-  ready,
-  getParamByName,
-  getAllParams,
-  toggleLoader
-} from './util';
+import * as Util from './util';
 import getCoordinates from "./latlong";
 
-ready(() => {
+Util.ready(() => {
   let $latitude_txt = document.getElementById('latitude-txt'),
     $longtitude_txt = document.getElementById('longitude-txt'),
     $timestamp_txt = document.getElementById('timestamp-txt'),
@@ -15,15 +10,15 @@ ready(() => {
     $coordinates_block = document.getElementById('coordinates-block'),
     $button__mark_this = document.getElementById('button--mark-this');
 
-    toggleLoader('show', $loading_indicator, $coordinates_block);
+    Util.toggleLoader('show', $loading_indicator, $coordinates_block);
 
-  let locationParams = getAllParams().loc;
+  let locationParams = Util.getAllParams().loc;
   let coord_regex =  /^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$/;
 
   if(locationParams != null && coord_regex.test(locationParams)) {
     $latitude_txt.innerHTML = locationParams.split(',')[0];
     $longtitude_txt.innerHTML = locationParams.split(',')[1];
-    toggleLoader('hide', $loading_indicator, $coordinates_block);
+    Util.toggleLoader('hide', $loading_indicator, $coordinates_block);
     return false;
   }
 
@@ -36,7 +31,7 @@ ready(() => {
   let locator = new getCoordinates(options);
 
   locator.then((res) => {
-    toggleLoader('hide', $loading_indicator, $coordinates_block);
+    Util.toggleLoader('hide', $loading_indicator, $coordinates_block);
 
     let query_loc_string =  `?loc=${res.coords.latitude},${res.coords.longitude}`;
 
